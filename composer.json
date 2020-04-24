@@ -1,6 +1,11 @@
 {
   "name": "deitsolutions/sticky-api-v2",
   "description": "Sticky.io v2 API PHP Client",
+  "keywords": [
+      "api",
+      "rest",
+      "sticky"
+  ],
   "require": {
     "php": ">=5.6.0",
     "php-curl-class/php-curl-class": "^8.0.0"
@@ -15,5 +20,10 @@
       "name": "Ramil Vildanov",
       "email": "ramil@almeydahost.com"
     }
-  ]
+  ],
+  "autoload": {
+      "psr-0": {
+          "Sticky": "src/"
+      }
+  },
 }

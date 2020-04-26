@@ -17,6 +17,16 @@ use Sticky\Api\Client;
 class Subscription extends Resource
 {
     /**
+     * Get
+     * @param $id
+     * @return mixed
+     */
+    public static function get($id)
+    {
+        return Client::getResource('/subscriptions/' . self::hashId($id));
+    }
+
+    /**
      * Start
      * @param $id
      * @return mixed

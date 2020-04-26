@@ -298,7 +298,7 @@ class Client
      * @param mixed $object object or XML string to create
      * @return mixed
      */
-    public static function createResource($path, $object)
+    public static function createResource($path, $object = [])
     {
         if (is_array($object)) {
             $object = (object)$object;
@@ -314,7 +314,7 @@ class Client
      * @param mixed $object object or XML string to update
      * @return mixed
      */
-    public static function updateResource($path, $object)
+    public static function updateResource($path, $object = [])
     {
         if (is_array($object)) {
             $object = (object)$object;

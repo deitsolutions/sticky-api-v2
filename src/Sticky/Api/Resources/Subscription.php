@@ -23,7 +23,7 @@ class Subscription extends Resource
      */
     public static function get($id)
     {
-        return Client::getResource('/subscriptions/' . self::hashId($id));
+        return Client::getResource('/subscriptions/' . $id);
     }
 
     /**
@@ -33,7 +33,7 @@ class Subscription extends Resource
      */
     public static function start($id)
     {
-        return Client::updateResource('/subscriptions/' . self::hashId($id) . '/start');
+        return Client::updateResource('/subscriptions/' . $id . '/start');
     }
 
     /**
@@ -43,7 +43,7 @@ class Subscription extends Resource
      */
     public static function stop($id)
     {
-        return Client::updateResource('/subscriptions/' . self::hashId($id) . '/stop');
+        return Client::createResource('/subscriptions/' . $id . '/stop');
     }
 
     /**
@@ -53,7 +53,7 @@ class Subscription extends Resource
      */
     public static function reset($id)
     {
-        return Client::updateResource('/subscriptions/' . self::hashId($id) . '/reset');
+        return Client::createResource('/subscriptions/' . $id . '/reset');
     }
 
     /**
@@ -63,7 +63,7 @@ class Subscription extends Resource
      */
     public static function stopNext($id)
     {
-        return Client::createResource('/subscriptions/' . self::hashId($id) . '/terminate_next');
+        return Client::updateResource('/subscriptions/' . $id . '/terminate_next');
     }
 
     /**
@@ -73,6 +73,6 @@ class Subscription extends Resource
      */
     public static function destroyNextStop($id)
     {
-        return Client::deleteResource('/subscriptions/' . self::hashString($id) . '/terminate_next');
+        return Client::deleteResource('/subscriptions/' . $id . '/terminate_next');
     }
 }

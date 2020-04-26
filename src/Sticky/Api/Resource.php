@@ -56,10 +56,4 @@ class Resource
     {
         return (isset($this->fields->$field));
     }
-    
-    public static function hashId($id)
-    {
-        return md5($id);
-    }
-
 }
